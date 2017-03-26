@@ -17,36 +17,35 @@ class CalculatorBrain
 {
   var delegate: CalculatorBrainDelegate
 
-  init(delegate: CalculatorBrainDelegate)
+  init(delegate: CalculatorBrainDelegate)                               //David told me to initialize my Class
   {
     self.delegate = delegate
   }
 
   func calculateProblem(operand1: Double, operand2: Double, operatorString: String)
   {
-    var result = 0.0
-    
+    var result = ""
     switch operatorString
     {
     case "+":
-      result = operand1 + operand2
+      result = String(operand1 + operand2)
     case "-":
-      result = operand1 - operand2
+      result = String(operand1 - operand2)
     case "*":
-      result = operand1 * operand2
+      result = String(operand1 * operand2)
     case "/":
       if operand2 == 0
       {
-        result = 0
+        result = "Error"
       }
       else
       {
-        result = operand1 / operand2
+        result = String(operand1 / operand2)
       }
     default:
-      result = 0
+      result = "Error"
     }
     
-    delegate.calculatorBrain(brain: self, didFinishWithResult: String(result))
+    delegate.calculatorBrain(brain: self, didFinishWithResult: String(result))        //here the brain is sending info back to the delegate
   }
 }

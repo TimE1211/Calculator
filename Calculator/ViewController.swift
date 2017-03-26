@@ -4,7 +4,7 @@
 //
 //  Created by Timothy Hang on 3/22/17.
 //  Copyright © 2017 Timothy Hang. All rights reserved.
-//
+// still had a few problems with my delegate skills but david talked me through it
 
 import UIKit
 
@@ -67,7 +67,7 @@ class ViewController: UIViewController, CalculatorBrainDelegate
       && operationSymbol != ""
     {
       calculatorBrain.calculateProblem(operand1: Double(operand1)!, operand2: Double(operand2)!, operatorString: operationSymbol)
-    }
+    }                       //here the brain is called to solve the problem and the result will be sent back(delegate)
     else
     {
         outputLabel.text = "ERROR HUMAN"
