@@ -56,8 +56,15 @@ class ViewController: UIViewController, CalculatorBrainDelegate
   
   @IBAction func operationSymbolTapped(sender: UIButton)
   {
-    operationSymbol = sender.currentTitle!
-    outputLabel.text = operationSymbol
+    if operationSymbol == ""
+    {
+      operationSymbol = sender.currentTitle!
+      outputLabel.text = operationSymbol
+    }
+    else
+    {
+      outputLabel.text = "Must press equals"
+    }
   }
   
   @IBAction func equalsTapped(sender: UIButton)
@@ -75,7 +82,7 @@ class ViewController: UIViewController, CalculatorBrainDelegate
     }
   }
   
-  func calculatorBrain(brain: CalculatorBrain, didFinishWithResult result: String)
+  func calculatedViaBrain(brain: CalculatorBrain, didFinishWithResult result: String)
   {
     outputLabel.text = String(result)
     operand2 = ""

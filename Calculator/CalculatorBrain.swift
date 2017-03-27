@@ -10,7 +10,7 @@ import Foundation
 
 protocol CalculatorBrainDelegate
 {
-  func calculatorBrain(brain: CalculatorBrain, didFinishWithResult result: String)
+  func calculatedViaBrain(brain: CalculatorBrain, didFinishWithResult result: String)
 }
 
 class CalculatorBrain
@@ -46,6 +46,6 @@ class CalculatorBrain
       result = "Error"
     }
     
-    delegate.calculatorBrain(brain: self, didFinishWithResult: String(result))        //here the brain is sending info back to the delegate
+    delegate.calculatedViaBrain(brain: self, didFinishWithResult: String(result))        //here the brain is sending info back to the delegate
   }
 }
