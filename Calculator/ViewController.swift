@@ -57,6 +57,7 @@ class ViewController: UIViewController, CalculatorBrainDelegate
   @IBAction func operationSymbolTapped(sender: UIButton)
   {
     operationSymbol = sender.currentTitle!
+    outputLabel.text = operationSymbol
   }
   
   @IBAction func equalsTapped(sender: UIButton)
